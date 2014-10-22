@@ -3,15 +3,28 @@
         <title>Memory</title>
     </head>
     <body>
+        <div id="playfield"></div>
+
+
+
+
+        <!-- Templates -->
+        <script type="text/template" class="card">
+            <div class="card">
+                <%= rc.name %>
+            </div>
+        </script>
+
 
         <!-- Vendors -->
+        <script src="./../lib/jquery.js"></script>
         <script src="./../lib/underscore.js"></script>
 
         <!-- Playfield + Cards -->
-        <script src="Card.js"></script>
+        <script src="Cards.js"></script>
         <script src="Playfield.js"></script>
 
         <!-- kickstarter -->
-	<script src="main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
