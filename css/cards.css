@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.displayNone {
+    display:none !important;
+}
+
+.card {
+    display: block;
+}

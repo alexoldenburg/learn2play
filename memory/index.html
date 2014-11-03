@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Memory</title>
+        <link rel="stylesheet" href="../css/cards.css" />
+        <link rel="stylesheet" href="memory.css" />
     </head>
     <body>
         <div id="playfield"></div>
@@ -9,16 +12,19 @@
 
 
         <!-- Templates -->
-        <script type="text/template" class="card">
-            <div class="card">
-                <%= rc.name %>
+        <script type="text/template" class="card displayNone">
+            <div class="cardContainer">
+                <div class="card closed" data-type="<%= rc.type %>">
+                    <%= rc.name %>
+                </div>
             </div>
         </script>
 
 
         <!-- Vendors -->
-        <script src="./../lib/jquery.js"></script>
-        <script src="./../lib/underscore.js"></script>
+        <script src="./../vendor/jquery.js"></script>
+        <script src="./../vendor/underscore.js"></script>
+        <script src="./../lib/extention.js"></script>
 
         <!-- Playfield + Cards -->
         <script src="Cards.js"></script>

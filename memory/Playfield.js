@@ -5,7 +5,7 @@ Playfield = function (options) {
     var self = this,
         __defaultOptions = {
             cards: {
-                amount: 2
+                amount: 3
             }
         };
 

@@ -1,7 +1,7 @@
 var cardsAssort = [
-    {name: "Circle"},
-    {name: "Triangle"},
-    {name: "Square"}
+    {name: "Circle", type: "circle"},
+    {name: "Triangle", type: "triangle"},
+    {name: "Square", type: "square"}
 ];
 
 Cards = function (options) {
@@ -25,17 +25,17 @@ Cards = function (options) {
 
         var playfieldCards = [];
         _.each(cards, function (card) {
-            playfieldCards.push(card);
-            playfieldCards.push(card);
+
+            playfieldCards.push(_.clone(card));
+            playfieldCards.push(_.clone(card));
         });
-        return playfieldCards;
+        return playfieldCards.shuffle();
     };
 
     var getRandomizedCardType = function () {
 
         var cardTypes = ["Circle", "Triangle", "Square"];
-        var randomized = Math.random(cardTypes.length);
-
+        var randomized = Math.random() * (cardTypes.length - 1);
         var randomizedCardType = cardTypes[Math.round(randomized)];
 
         var found = _.find(cards, function (card) {
@@ -47,11 +47,10 @@ Cards = function (options) {
 
     var init = function () {
 
-        if (options.amount && _.isNumber(options.amount)) {
+        if (options.amount && _.isNumber(options.amount) && options.amount > 0) {
 
             var thisCards = _.range(options.amount);
-
-            _.each(thisCards, function () {
+            _.each(thisCards, function (value, key) {
 
                 var randomized = getRandomizedCardType();
                 self.create(randomized);
